@@ -56,7 +56,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
-        'APP_DIRS': True,
+        'APP_DIRS': True, # 각 앱이 가지고 있는 폴더중에 templates를 뒤져보게 함 
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
