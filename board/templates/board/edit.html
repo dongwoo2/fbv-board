@@ -1,0 +1,29 @@
+{% extends 'board/base.html' %}
+{% block title %}수정{% endblock %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}  
+    <input type="hidden" name="writer" value="{{board.writer}}"> <!-- 밑에 있는 writer가 포함되지 않아 값 전달이 안되기에 hidden으로 하나 빼둔다. -->
+<table border="1">
+    <tr>
+        <th>Title</th>
+        <td>
+            <input type="text" name="title" value="{{board.title}}">
+        </td>
+    </tr>
+    <tr>
+        <th>writer</th>
+        <td>
+            <input type="text" name="writer" value="{{board.writer}}" disabled> <!-- 기존 값을 보여주지만 수정 불가하게 해야함 왜냐면 수정 될 이유가 없으니까-->
+        </td>
+    </tr>
+    <tr>
+        <th>content</th>
+        <td>
+            <textarea name="content">{{board.content}}</textarea>
+        </td>
+    </tr>
+</table>
+<button type="submit">수정</button>  <!-- submit 되게-->
+</form>
+{% endblock %}

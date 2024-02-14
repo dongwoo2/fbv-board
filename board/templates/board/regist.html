@@ -1,0 +1,28 @@
+{% extends 'board/base.html' %}
+{% block title %}등록{% endblock %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}  <!-- 등록이니까 crsf token이 있게 -->
+<table border="1">
+    <tr>
+        <th>Title</th>
+        <td>
+            <input type="text" name="title">
+        </td>
+    </tr>
+    <tr>
+        <th>writer</th>
+        <td>
+            <input type="text" name="writer">
+        </td>
+    </tr>
+    <tr>
+        <th>content</th>
+        <td>
+            <textarea name="content"></textarea>
+        </td>
+    </tr>
+</table>
+<button type="submit">등록</button>  <!-- submit 되게-->
+</form>
+{% endblock %}
